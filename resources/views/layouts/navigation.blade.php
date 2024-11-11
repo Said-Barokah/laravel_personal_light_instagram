@@ -29,7 +29,7 @@
                     <x-slot name="trigger">
                         <button class="inline-flex space-x-3 items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <img src="{{ auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('images/icon_user.png') }}"
-                             alt="Foto Profil" class="profil_photo" style="width: 30px; height: 30px; border-radius: 50%;">
+                             alt="Foto Profil" class="profil_photo object-cover" style="width: 30px; height: 30px; border-radius: 50%;">
                             <div>{{ Auth::user()->name }}</div>
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

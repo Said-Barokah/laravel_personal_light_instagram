@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
         @csrf
         @method('patch')
 
@@ -55,16 +55,22 @@
         <!-- Profile Photo -->
         <div>
 
-            <x-input-label for="profile_photo" :value="__('Profile Photo')" />
+            <x-input-label for="profile_photo_path" :value="__('Profile Photo')" />
 
             <div class="flex space-x-3">
                 @if ($user->profile_photo_path)
-                <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Profile Photo" class="mt-2 mb-4 w-20 h-20 rounded-full">
+                <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Profile Photo" class="mt-2 mb-4 w-20 h-20 rounded-full object-cover">
                 @endif
-                <input type="file" name="profile_photo" id="profile_photo" class="h-fit border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                <input type="file" name="profile_photo_path" id="profile_photo_path" class="h-fit border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
             </div>
 
-            <x-input-error class="" :messages="$errors->get('profile_photo')" />
+            <x-input-error class="" :messages="$errors->get('profile_photo_path')" />
+        </div>
+        <div>
+            <x-input-label for="feeds_per_row" :value="__('Feeds Per Row')"/>
+            <x-text-input type="number" name="feeds_per_row" id="feeds_per_row" min="1" max="6"
+                   value="{{ auth()->user()->feeds_per_row ?? 3 }}" required/>
+            <small class="text-gray-600 dark:text-gray-400">Default adalah 3 feeds per row.</small>
         </div>
 
         <div class="flex items-center gap-4">
