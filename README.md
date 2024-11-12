@@ -13,9 +13,11 @@ Deskripsi singkat tentang proyek ini dan tujuannya.
 
 ## Instalasi
 
-### Install Dependensi PHP dengan Composer
-Jalankan perintah berikut untuk menginstal semua dependensi PHP Laravel 11:
-composer install
+```bash
+# Ini adalah perintah terminal di Bash
+echo "Hello, World!"
+ls -al
+```
 
 
 
