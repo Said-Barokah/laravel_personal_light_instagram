@@ -13,11 +13,57 @@ Deskripsi singkat tentang proyek ini dan tujuannya.
 
 ## Instalasi
 
+### 1. Install Dependensi PHP dengan Composer
+
 ```bash
-# Ini adalah perintah terminal di Bash
-echo "Hello, World!"
-ls -al
+# Jalankan perintah berikut untuk menginstal semua dependensi PHP Laravel 11:
+composer install
 ```
+### 2. Install Dependensi Frontend dengan npm
+
+```bash
+# Jalankan perintah ini untuk menginstal dependensi frontend:
+npm install
+```
+
+### 3. Salin File .env dan Konfigurasi Environment
+
+```bash
+# Salin file .env.example menjadi .env dan sesuaikan pengaturannya:
+cp .env.example .env
+```
+
+### 4. Jalankan Migrasi dan Seeder
+
+
+```bash
+# Jalankan migrasi database untuk membuat tabel:
+php artisan migrate
+#Jika ada seeder, Anda dapat menjalankannya juga dengan:
+php artisan db:seed
+```
+
+### 5. Konfigurasi Storage Link
+```bash
+# Laravel membutuhkan link ke storage untuk menyimpan file secara publik:
+php artisan storage:link
+#Jika ada seeder, Anda dapat menjalankannya juga dengan:
+php artisan db:seed
+```
+### 6. Build Asset Frontend
+``` bash
+# Jalankan perintah berikut untuk mengompilasi aset frontend:
+npm run dev
+Gunakan npm run build untuk produksi.
+```
+### 7. Menjalankan Aplikasi
+``` bash
+# Jalankan server Laravel dengan perintah berikut:
+php artisan serve
+npm run dev
+```
+
+
 
 
 
