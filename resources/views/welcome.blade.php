@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -20,7 +19,53 @@
         @endif
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <!-- Navbar -->
+            <nav class="bg-white dark:bg-gray-800 shadow-lg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <div class="flex">
+                            <!-- Logo -->
+                            <div class="flex-shrink-0 flex items-center">
+                                <a href="{{ url('/') }}" class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                                    MyApp
+                                </a>
+                            </div>
+
+                            <!-- Navigation Links -->
+                            <div class="hidden sm:-my-px sm:ml-6 sm:flex space-x-4">
+                                <a href="#"
+                                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                                    Home
+                                </a>
+                                <a href="#"
+                                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                                    About
+                                </a>
+                                <a href="#"
+                                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                                    Services
+                                </a>
+                                <a href="#"
+                                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                                    Contact
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <div class="p-8 text-gray-800 dark:text-gray-200">
+                <h1 class="text-4xl font-bold mb-4">Welcome to MyApp</h1>
+                <p class="text-lg">Explore the features of our application.</p>
+            </div>
+        </div>
+
+        {{-- <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
             <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" />
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
@@ -171,6 +216,6 @@
                     </footer>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </body>
 </html>
