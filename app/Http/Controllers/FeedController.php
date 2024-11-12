@@ -11,7 +11,11 @@ class FeedController extends Controller
     public function index()
     {
         $feeds = Feed::with('user')->orderBy('created_at', 'desc')->get();
-        return view('feed', compact('feeds'));
+
+        $feedsPerRow = Auth::user()->feeds_per_row ?? 3; // default ke 3 jika tidak ada setelan
+
+        // Kirim data feeds dan feeds_per_row ke view
+        return view('feed', compact('feeds', 'feedsPerRow'));
     }
 
     public function create()

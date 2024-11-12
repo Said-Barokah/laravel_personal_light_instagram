@@ -42,6 +42,9 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('archive.index')">
+                            {{ __('Archive') }}
+                        </x-dropdown-link>
 
                         <!-- Menampilkan Foto Profil atau Ikon Default -->
 

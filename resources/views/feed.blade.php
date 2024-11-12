@@ -16,32 +16,28 @@
                         </a>
                     </div>
 
-                    <div class="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                    <div class="grid grid-cols-{{ $feedsPerRow }} gap-4">
                         @foreach ($feeds as $feed)
                             <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-                                {{-- Menampilkan video jika media_type adalah 'video' --}}
                                 @if ($feed->media_type === 'video')
                                     <video controls class="w-full h-64 object-cover">
                                         <source src="{{ asset('storage/'.$feed->media_path) }}" type="video/mp4">
                                         Browser Anda tidak mendukung video tag.
                                     </video>
-                                    {{-- Menampilkan gambar jika media_type adalah 'image' --}}
                                 @elseif($feed->media_type === 'image')
-                                    <img src="{{asset( 'storage/'.$feed->media_path) }}" alt="Feed image"
-                                        class="w-full h-64 object-cover">
+                                    <img src="{{ asset('storage/'.$feed->media_path) }}" alt="Feed image" class="w-full h-64 object-cover">
                                 @endif
 
-                                {{-- Konten dan Caption --}}
                                 <div class="p-4">
-                                    <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                                        {{ $feed->user->name }}</h5>
+                                    <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $feed->user->name }}</h5>
                                     <p class="text-gray-600 dark:text-gray-400 mt-2">{{ $feed->caption }}</p>
-                                    <small
-                                        class="text-gray-400 dark:text-gray-500 text-xs">{{ $feed->created_at->diffForHumans() }}</small>
+                                    <small class="text-gray-400 dark:text-gray-500 text-xs">{{ $feed->created_at->diffForHumans() }}</small>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
+
                 </div>
             </div>
         </div>
